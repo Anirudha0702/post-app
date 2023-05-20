@@ -16,11 +16,11 @@ const MyApp: AppType<{ session: Session | null }> = ({
     <SessionProvider session={session}>
       <Head>
         <title>Post App</title>
-        <meta name="description" content="next js full stack web" />
+        <meta name="description" content="next js full stack web by Anirudha D. Pradhan" />
       </Head>
-      <div className="container mx-auto flex">
+      <div className="container text-gray-200 mx-auto max-w-full flex bg-gradient-to-r from-gray-700 via-gray-900 to-black">
         <SideBar />
-      <div className="border-l-[0.150rem] border-r-[0.150rem] flex-grow min-h-screen">
+      <div className="border-l-[0.150rem] border-r-[0.150rem] flex-grow min-h-screen border-gray-500">
       <Component {...pageProps} />
       </div>
       </div>
