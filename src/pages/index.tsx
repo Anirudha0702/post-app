@@ -3,6 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { signIn, signOut, useSession } from "next-auth/react";
 import NewPost from "~/components/NewPost";
+import ProfilePic from "~/components/ProfilePic";
 
 
 const Home: NextPage = () => {
@@ -13,7 +14,6 @@ const Home: NextPage = () => {
       <header className="sticky 
       top-0 
       z-10 
-      border-b
       border-gray-400
       px-2 flex
       ">
@@ -22,12 +22,23 @@ const Home: NextPage = () => {
         text-lg flex-1
         ">POST APP</h1>
         {user !=null &&(
-          <img src={user?.image!} alt="user " className="h-8 w-8 rounded-full mr-1"/>
+          <ProfilePic src={user.image} className="h-9 w-9 mr-4"/>
         )}
       </header>
-      <main>
+      {
+        session.status=='authenticated' &&(
+          <main>
         <NewPost/>
       </main>
+        )
+      }
+      {
+        session.status!='authenticated' &&(
+          <main>
+        <NewPost/>
+      </main>
+        )
+      }
     </>
   );
 };
