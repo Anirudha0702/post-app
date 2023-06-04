@@ -4,7 +4,16 @@ import Link from "next/link";
 import { signIn, signOut, useSession } from "next-auth/react";
 import NewPost from "~/components/NewPost";
 import ProfilePic from "~/components/ProfilePic";
-
+import AllPosts from "~/components/AllPosts";
+import {api} from "~/utils/api"
+const LatestPosts=()=>{
+  const posts=api.post.allPosts.useInfiniteQuery({},{getNextPageParam:(page)=>page.forwardCursor});
+  return <AllPosts posts={posts.data?.pages.flatMap(page=>page.posts)}
+  isError={posts.isError}
+  isLoading={posts.isLoading}
+  newPosts={posts.fetchNextPage}
+  hasMore={posts.hasNextPage}/>
+}
 
 const Home: NextPage = () => {
   const session=useSession();
@@ -29,13 +38,14 @@ const Home: NextPage = () => {
         session.status=='authenticated' &&(
           <main>
         <NewPost/>
+        <LatestPosts/>
       </main>
         )
       }
       {
         session.status!='authenticated' &&(
           <main>
-        <NewPost/>
+        <h1>you have to login for wverything </h1>
       </main>
         )
       }

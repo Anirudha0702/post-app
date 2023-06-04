@@ -65,6 +65,7 @@ model Post{
     createdAt DateTime @default(now())
     user User @relation(fields:[userId],references: [id],onDelete:Cascade )
     likes Like[]
+    @@unique([createdAt,id])
     @@index([userId])
 }
 model Like{

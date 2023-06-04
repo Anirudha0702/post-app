@@ -5,7 +5,6 @@ import { api } from '~/utils/api';
   const [input,setInput]=useState("");
   const createPost=api.post.create.useMutation({
     onSuccess:post=>{
-      console.log(post);
       setInput('');
     }
   })
@@ -22,7 +21,7 @@ import { api } from '~/utils/api';
              bg-transparent' placeholder='Anything wanna say...' value={input} onChange={(e)=>setInput(e.target.value)}></textarea>
         </div>
         <div className="flex items-center gep-2">
-          <Button className='self-start mb-2' disabled={input.length>200?true:false}>POST</Button>
+          <Button className='self-start mb-2' disabled={input.length>200?true:false}>SEND</Button>
           <p className={input.length>200?"text-red-500":""}>{input.length}</p>/200
         </div>
 
