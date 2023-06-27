@@ -4,7 +4,7 @@ type AllPostQueryProps={
   isError:boolean,
   hasMore: boolean|undefined,
   newPosts:()=>Promise<any>
-  posts:post[]|undefined
+  posts:post[]
 }
 type post={ 
   id:string,
@@ -14,7 +14,7 @@ type post={
   likedByUser:boolean,
   user:{
     image:string|null,
-    id:string|null,
+    id:string,
     name:string|null
   }
 }

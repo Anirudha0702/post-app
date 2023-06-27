@@ -23,6 +23,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
       <div className="border-l-[0.150rem] border-r-[0.150rem] flex-grow min-h-screen border-gray-500">
       <Component {...pageProps} />
       </div>
+      <div className="hidden md:min-w-[20%] md:block"></div>
       </div>
     </SessionProvider>
   );
