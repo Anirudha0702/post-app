@@ -2,6 +2,8 @@ import type{DetailedHTMLProps,ButtonHTMLAttributes} from "react"
 export type LikeButtonProps={
     likedByUser:boolean,
     totalLikes:number
+    onClick:()=>void
+    isLoading:boolean
 }
 export type  AllPostQueryProps = {
     isLoading: boolean,

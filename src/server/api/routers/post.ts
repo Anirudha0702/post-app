@@ -88,5 +88,8 @@ export const postRouter = createTRPCRouter({
                 userId: ctx.session.user.id
             }
         })
-    })
+    }),
+    liked:protectedProcedure.input(z.object({
+        id:z.string()
+    })).mutation
 });
