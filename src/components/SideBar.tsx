@@ -18,7 +18,7 @@ export const SideBar: React.FC = () => {
                     <Link href="/">
                         <div className="group flex items-center gap-1">
                             <ImHome className="text-2xl group-hover:fill-green-500"/>
-                            <span className="hidden md:inline hover:text-green-500">Home</span>
+                            <span className="hidden md:inline group-hover:text-green-500">Home</span>
                         </div>
                     </Link>
                 </li>
