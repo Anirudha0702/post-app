@@ -1,5 +1,8 @@
 import type{ DetailedHTMLProps, ButtonHTMLAttributes } from "react";
 
+export type LoadingProps = {
+    big?:boolean
+}
 export type LikeButtonProps = {
     onClick : () => void
     isLoading : boolean
@@ -10,7 +13,6 @@ export type ProfilePictureProps = {
     src?:string | null
     className?: string
 }
-
 export type Post = {
     id: string,
     content: string,

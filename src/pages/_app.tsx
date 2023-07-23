@@ -5,8 +5,9 @@ import { SessionProvider } from "next-auth/react";
 import { api } from "~/utils/api";
 import "~/styles/globals.css";
 import Head from "next/head";
+import { title } from "process";
 import { SideBar } from "~/components/SideBar";
-import Chatbot from "~/components/Chatbot";
+import LeftBar from "~/components/LeftBar";
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
@@ -33,9 +34,8 @@ const MyApp: AppType<{ session: Session | null }> = ({
           <Component {...pageProps} />
         </div>
         <div className="hidden
-        
         md:block">
-          <Chatbot/>
+          <LeftBar/>
         </div>
       </div>
     </SessionProvider>
