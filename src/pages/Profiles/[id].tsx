@@ -5,8 +5,8 @@ import ErrorPage from 'next/error'
 
 const ProfilePage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ id }) => {
     const { data: profile } = api.profile.getUsingId.useQuery({ id })
-
-    if (profile == null || profile.name == null) return <ErrorPage statusCode={404} />
+    console.log(profile)
+    if (profile == null || profile.name == null) return <ErrorPage statusCode={500} />
     return (
         <>
             
@@ -18,12 +18,13 @@ const ProfilePage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 export const getStaticPaths: GetStaticPaths = () => {
     return {
         paths: [],
-        fallback: 'blocking'
+        fallback: false
     }
 }
 
 export async function getStaticProps(context: GetStaticPropsContext<{ id: string }>) {
     const id = context.params?.id
+    console.log(id)
     if (id == null) {
         return {
             redirect: {
