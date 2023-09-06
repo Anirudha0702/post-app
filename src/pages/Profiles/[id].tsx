@@ -24,7 +24,6 @@ export const getStaticPaths: GetStaticPaths = () => {
 
 export async function getStaticProps(context: GetStaticPropsContext<{ id: string }>) {
     const id = context.params?.id
-    console.log(id)
     if (id == null) {
         return {
             redirect: {
