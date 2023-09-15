@@ -1,4 +1,3 @@
-import type { ButtonHTMLAttributes, ReactElement, DetailedHTMLProps } from "react"
 import { ButtonProps } from "~/types/types"
 
 const Button = ({ sm = false,

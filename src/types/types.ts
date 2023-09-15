@@ -13,6 +13,7 @@ export type ProfilePictureProps = {
     src?:string | null
     className?: string
 }
+
 export type Post = {
     id: string,
     content: string,

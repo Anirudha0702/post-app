@@ -28,7 +28,10 @@ const Home: NextPage = () => {
       z-10
       pt-2
       rounded-b-lg
-      bg-gradient-to-r from gray-700/4 via gray-900 to-black
+      bg-gradient-to-r
+      from-gray-700/3
+      via-gray-900
+      to-black
       flex
       ">
         <h1 className="px-4 font-bold
@@ -45,7 +48,6 @@ const Home: NextPage = () => {
       {session.status == 'authenticated' && (
         <main>
           <NewPost />
-          {/* a fucntion that returns JSX Elements */}
           <LatestPosts />
         </main>
       )}

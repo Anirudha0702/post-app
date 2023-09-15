@@ -37,7 +37,7 @@ export const SideBar: React.FC = () => {
                         <li className="border rounded-full px-4 py-1 border-gray-600
             hover:bg-gray-600
             hover:border-gray-500  transition duration-150">
-                            <Link href={`/Profiles/${user?.id}`}><div className="group flex items-center gap-1">
+                            <Link href={`/profiles/${user?.id}`}><div className="group flex items-center gap-1">
                                 <FaUserCircle className="text-2xl group-hover:fill-green-400" />
                                 <span className="hidden md:inline hover:text-green-500">Profile</span>
                             </div></Link>
