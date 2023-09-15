@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/consistent-type-imports
 import { FormEvent, useState } from "react"
 import Button from "./Button"
 import { api } from "~/utils/api"
